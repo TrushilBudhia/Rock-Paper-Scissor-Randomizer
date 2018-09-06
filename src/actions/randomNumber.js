@@ -1,20 +1,14 @@
 
 export const GENERATE_RANDOMNUMBER = 'GENERATE_RANDOMNUMBER'
-export function generateRandomNumber() {
-  const RandomNumber = Math.floor(Math.random() * 3) + 1
-  let result = "-";
-	 
-  if (RandomNumber === 1) {
-    result = "Rock";
-  };
 
-  if (RandomNumber === 2) {
-    result = "Paper";
-  };
+export function generateRandomNumber() {
+  const RandomNumber = Math.floor(Math.random() * 3) 
+  const GetGameResult = RandomNumber => {
+	const outcomes = ['Rock', 'Paper', 'Scissor']
+	return outcomes[ RandomNumber]		
+  }	  
   
-  if (RandomNumber === 3) {
-    result = "Scissor";
-  };
+  const result = GetGameResult(RandomNumber)
 
   return {
 	  type:  GENERATE_RANDOMNUMBER,
